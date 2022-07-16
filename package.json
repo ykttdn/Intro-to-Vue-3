@@ -1,0 +1,23 @@
+{
+  "name": "intro-to-vue-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ykttdn/Intro-to-Vue-3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ykttdn/Intro-to-Vue-3/issues"
+  },
+  "homepage": "https://github.com/ykttdn/Intro-to-Vue-3#readme",
+  "devDependencies": {
+    "eslint": "^8.19.0",
+    "eslint-plugin-vue": "^9.2.0"
+  }
+}
