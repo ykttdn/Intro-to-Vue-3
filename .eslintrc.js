@@ -15,6 +15,5 @@ module.exports = {
     'vue',
   ],
   'rules': {
-    'object-curly-spacing': 'always',
   },
 };
