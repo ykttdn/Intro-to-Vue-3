@@ -19,11 +19,11 @@ app.component('review-form', {
       <option>1</option>
     </select>
 
-    <p>Would you recommend this product?</p>
-    <label for="recommend">Yes</label>
-    <input type="radio" id="recommend" name="recommend" value="yes" v-model="recommend">
-    <label for="do-not-recommend">No</label>
-    <input type="radio" id="do-not-recommend" name="recommend" value="no" v-model="recommend">
+    <label for="recommend">Would you recommend this product?</label>
+    <select id="recommend" v-model="recommend">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
 
     <input class="button" type="submit" value="Submit">
   </form>
@@ -39,7 +39,7 @@ app.component('review-form', {
   methods: {
     onSubmit() {
       if (this.name === '' || this.review === '' ||
-          this.rating === null || this.recommend === '') {
+          this.rating === null || this.recommend === null) {
         alert('Review is incomplete. Please fill out every field.');
         return;
       }
@@ -54,7 +54,7 @@ app.component('review-form', {
       this.name = '';
       this.review = '';
       this.rating = null;
-      this.recommend = '';
+      this.recommend = null;
     },
   },
 });
