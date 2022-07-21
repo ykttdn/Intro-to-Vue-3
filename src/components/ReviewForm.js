@@ -19,6 +19,12 @@ app.component('review-form', {
       <option>1</option>
     </select>
 
+    <p>Would you recommend this product?</p>
+    <label for="recommend">Yes</label>
+    <input type="radio" id="recommend" name="recommend" value="yes" v-model="recommend">
+    <label for="do-not-recommend">No</label>
+    <input type="radio" id="do-not-recommend" name="recommend" value="no" v-model="recommend">
+
     <input class="button" type="submit" value="Submit">
   </form>
   `,
@@ -27,11 +33,13 @@ app.component('review-form', {
       name: '',
       review: '',
       rating: null,
+      recommend: '',
     };
   },
   methods: {
     onSubmit() {
-      if (this.name === '' || this.review === '' || this.rating === null) {
+      if (this.name === '' || this.review === '' ||
+          this.rating === null || this.recommend === '') {
         alert('Review is incomplete. Please fill out every field.');
         return;
       }
@@ -39,12 +47,14 @@ app.component('review-form', {
         name: this.name,
         review: this.review,
         rating: this.rating,
+        recommend: this.recommend,
       };
       this.$emit('review-submitted', productReview);
 
       this.name = '';
       this.review = '';
       this.rating = null;
+      this.recommend = '';
     },
   },
 });
